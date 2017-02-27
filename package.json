@@ -1,0 +1,46 @@
+{
+  "name": "tangojs-panel",
+  "version": "0.1.0",
+  "description": "Synoptic panel built with TangoJS.",
+  "author": "mliszcz <liszcz.michal@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "compile": "rollup -c rollup.config.js && node rollupComponents.js",
+    "lint": "eslint src",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "http-server -c-1",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mliszcz/tangojs-panel.git"
+  },
+  "keywords": [
+    "tangojs",
+    "tango"
+  ],
+  "bugs": {
+    "url": "https://github.com/mliszcz/tangojs-panel/issues"
+  },
+  "homepage": "https://github.com/mliszcz/tangojs-panel#readme",
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "ecma-proposal-object-values-entries": "github:tc39/proposal-object-values-entries",
+    "html-imports-firefox-patch": "github:mliszcz/html-imports-firefox-patch",
+    "jquery": "^2.2.0",
+    "material-design-icons": "^2.2.0",
+    "tangojs-connector-local": "^0.4.0",
+    "tangojs-connector-mtango": "^0.5.0",
+    "tangojs-core": "^0.4.0",
+    "tangojs-web-components": "^0.4.0",
+    "webcomponents.js": "^0.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.16.0",
+    "gh-pages": "^0.12.0",
+    "glob": "^7.1.0",
+    "http-server": "^0.9.0",
+    "rollup": "^0.41.0"
+  }
+}
