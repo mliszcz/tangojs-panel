@@ -8,7 +8,7 @@
   "scripts": {
     "compile": "rollup -c rollup.config.js && node rollupComponents.js",
     "lint": "eslint src",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "server": "http-server -c-1",
     "deploy": "gh-pages -d ."
   },
@@ -41,6 +41,9 @@
     "gh-pages": "^0.12.0",
     "glob": "^7.1.0",
     "http-server": "^0.9.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "nyc": "^10.1.2",
     "rollup": "^0.41.0"
   }
 }
