@@ -1,6 +1,6 @@
 
 export default {
-  entry: 'src/application.js',
+  entry: 'src/index.js',
   dest: 'dist/tangojs-panel.js',
   format: 'iife',
   moduleName: 'tjp',
