@@ -1,0 +1,4 @@
+{
+  "instrument": false,
+  "include": [ "src/**/*.js" ]
+}

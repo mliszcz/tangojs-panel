@@ -9,7 +9,7 @@ chai.should()
 describe('reducers.widgets', () => {
 
   describe('ADD_WIDGET', () => {
-    it('should add widget to the collection', () => {
+    it('should add widget to the empty collection', () => {
       const state = reducers.widgets(undefined, actions.addWidget('div', {}, {}))
       state['1'].tag.should.equal('div')
     })
