@@ -7,11 +7,15 @@ export default {
   plugins: [],
   external: [
     'window',
+    'preact',
+    'redux',
     'tangojs-core',
     'tangojs-web-components'
   ],
   globals: {
     'window': 'window',
+    'preact': 'preact',
+    'redux': 'Redux',
     'tangojs-core': 'tangojs.core',
     'tangojs-web-components': 'tangojs.web'
   },
