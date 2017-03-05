@@ -1,8 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+
+    <title>TangoJS Panel</title>
+
+    <link rel=stylesheet" href="node_modules/react-grid-layout/css/styles.css">
+    <link rel=stylesheet" href="node_modules/react-resizable/css/styles.css">
+
+    <link rel="stylesheet" href="assets/style.css">
+
     <script src="node_modules/preact/dist/preact.min.js"></script>
+    <script src="node_modules/proptypes/index.js"></script>
+    <script src="node_modules/preact-compat/dist/preact-compat.js"></script>
+
     <script src="node_modules/redux/dist/redux.min.js"></script>
+    <script src="node_modules/preact-redux/dist/preact-redux.min.js"></script>
+
+    <script>
+      window.React = window.preactCompat
+      window.ReactDOM = window.preactCompat
+    </script>
+
+    <script src="lib/react-grid-layout/react-grid-layout.min.js"></script>
   </head>
   <body>
     <div id="root"></div>

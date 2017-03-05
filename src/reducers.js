@@ -8,8 +8,7 @@ export function widgets(widgets = {}, action) {
   switch (action.type) {
 
     case ACTION_TYPE.WIDGET_ADD:
-      counter = counter + 1
-      return Object.assign({}, widgets, { [`${counter}`]: {
+      return Object.assign({}, widgets, { [`${counter++}`]: {
         tag: action.tag,
         attributes: action.attributes,
         position: action.position

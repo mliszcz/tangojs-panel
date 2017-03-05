@@ -8,6 +8,9 @@ export default {
   external: [
     'window',
     'preact',
+    'react',
+    'react-grid-layout',
+    'preact-redux',
     'redux',
     'tangojs-core',
     'tangojs-web-components'
@@ -15,6 +18,9 @@ export default {
   globals: {
     'window': 'window',
     'preact': 'preact',
+    'react': 'preact',
+    'react-grid-layout': 'ReactGridLayout',
+    'preact-redux': 'preactRedux',
     'redux': 'Redux',
     'tangojs-core': 'tangojs.core',
     'tangojs-web-components': 'tangojs.web'
