@@ -11,6 +11,7 @@ export default {
     'react',
     'react-grid-layout',
     'preact-redux',
+    'ramda',
     'redux',
     'tangojs-core',
     'tangojs-web-components'
@@ -21,6 +22,7 @@ export default {
     'react': 'preact',
     'react-grid-layout': 'ReactGridLayout',
     'preact-redux': 'preactRedux',
+    'ramda': 'R',
     'redux': 'Redux',
     'tangojs-core': 'tangojs.core',
     'tangojs-web-components': 'tangojs.web'

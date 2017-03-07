@@ -1,13 +1,29 @@
 
 import { connect } from 'preact-redux'
+import * as actions from '../actions'
 import Dashboard from '../components/Dashboard'
 
-// const mapStateToProps = (state) => ({ widgets: state.widgets })
 const mapStateToProps = (state) => {
-  console.log('widgets: ', state.widgets)
-  return { widgets: state.widgets }
+  return {
+    widgets: state.widgets,
+    layouts: state.layouts
+  }
 }
 
-const ConnectedDashboard = connect(mapStateToProps)(Dashboard)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onLayoutChange: (layout, layouts) => {
+      dispatch(actions.updateLayouts(layouts))
+    },
+    onBreakpointChange: (breakpoint) => {
+      dispatch(actions.updateLayoutBreakpoint(breakpoint))
+    }
+  }
+}
+
+const ConnectedDashboard = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Dashboard)
 
 export default ConnectedDashboard

@@ -6,8 +6,8 @@ function Enum(...literals) {
 export const ACTION_TYPE = Enum(
   'WIDGET_ADD',
   'WIDGET_REMOVE',
-  'WIDGET_MOVE',
-  'WIDGET_LOAD')
+  'LAYOUT_UPDATE',
+  'LAYOUT_BREAKPOINT_UPDATE')
 
 export function addWidget(tag, attributes, position) {
   return {
@@ -25,17 +25,16 @@ export function removeWidget(index) {
   }
 }
 
-export function moveWidget(index, position) {
+export function updateLayouts(layouts) {
   return {
-    type: ACTION_TYPE.WIDGET_MOVE,
-    index,
-    position
+    type: ACTION_TYPE.LAYOUT_UPDATE,
+    layouts
   }
 }
 
-export function loadWidgets(widgets) {
+export function updateLayoutBreakpoint(breakpoint) {
   return {
-    type: ACTION_TYPE.WIDGET_LOAD,
-    widgets
+    type: ACTION_TYPE.LAYOUT_BREAKPOINT_UPDATE,
+    breakpoint
   }
 }

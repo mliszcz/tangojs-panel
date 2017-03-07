@@ -6,6 +6,6 @@ import Dashboard from './Dashboard'
 
 export default function Application() {
   return h('div', { class: 'grid-container' },
-    h(Dashboard, {})
+    h(ConnectedDashboard, {})
   )
 }
