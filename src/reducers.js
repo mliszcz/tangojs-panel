@@ -35,7 +35,9 @@ export function currentBreakpoint(currentBreakpoint = 'lg', action) {
   return currentBreakpoint
 }
 
-export function layouts(layouts = { lg: [] }, action) {
+const INITIAL_LAYOUTS = { lg: [], md: [], sm: [], xs: [], xxs: [] }
+
+export function layouts(layouts = INITIAL_LAYOUTS, action) {
 
   switch (action.type) {
 
