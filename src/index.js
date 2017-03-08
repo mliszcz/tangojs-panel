@@ -40,16 +40,6 @@ generateWidgets().map(w => {
   store.dispatch(actions.addWidget(w.tag, w.attributes, w.position))
 })
 
-// function addWidget(text) {
-//   store.dispatch(actions.addWidget('input', {
-//     type: 'text',
-//     value: text
-//   }, { x: 0, y: 0, w: 0, h: 0}))
-// }
-//
-// addWidget('first')
-// addWidget('second')
-
 render(
   h(Provider, { store }, h(Application, {})),
   document.getElementById('root'))

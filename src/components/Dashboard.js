@@ -42,6 +42,7 @@ export default class Dashboard extends Component {
     return h(
       ResponsiveReactGridLayout,
       Object.assign({}, this.props, {
+        // verticalCompact: false, // TODO: make configurable by user
         measureBeforeMount: false,
         useCSSTransforms: this.state.mounted
       }),
