@@ -40,6 +40,6 @@ generateWidgets().map(w => {
   store.dispatch(actions.addWidget(w.tag, w.attributes, w.position))
 })
 
-render(
-  h(Provider, { store }, h(Application, {})),
-  document.getElementById('root'))
+export function bootstrap(rootElement) {
+  render(h(Provider, { store }, h(Application, {})), rootElement)
+}

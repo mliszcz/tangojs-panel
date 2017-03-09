@@ -110,3 +110,45 @@ li b {
   box-sizing: border-box;
   cursor: se-resize;
 }
+
+
+
+
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+    .device-tree-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .device-tree-block .btn-toolbar,
+    .device-tree-block .btn-group {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+    }
+
+    .device-tree-block .btn-group button {
+      flex: min-content;
+    }
+
+    .device-tree-block .btn-group button:nth-child(1) {
+      flex: 1;
+    }
+
+    .device-tree-block .btn-group button i {
+      vertical-align: middle;
+    }
+
+    .device-tree-block .btn-group button:nth-child(1) i {
+      margin-right: .5rem;
+    }
+
+
