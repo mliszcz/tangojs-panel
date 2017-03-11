@@ -112,43 +112,73 @@ li b {
 }
 
 
+/* tjp-application */
 
-
-
-.bm-burger-button {
-  position: fixed;
-  width: 36px;
-  height: 30px;
-  left: 36px;
-  top: 36px;
+.tjp-application {
+  display: flex;
+  flex-direction: horizontal;
 }
 
-    .device-tree-block {
-      display: flex;
-      flex-direction: column;
-    }
+.tjp-application > .tjp-menu {
+  flex: 0;
+}
 
-    .device-tree-block .btn-toolbar,
-    .device-tree-block .btn-group {
-      display: flex;
-      flex-direction: row;
-      flex: 1;
-    }
+.tjp-application > .tjp-dashboard {
+  flex: 1;
+}
 
-    .device-tree-block .btn-group button {
-      flex: min-content;
-    }
+/* tjp-menu */
 
-    .device-tree-block .btn-group button:nth-child(1) {
-      flex: 1;
-    }
+.tjp-menu {
+  display: flex;
+  flex-direction: horizontal;
+  align-items: flex-start;
+}
 
-    .device-tree-block .btn-group button i {
-      vertical-align: middle;
-    }
+.tjp-menu > .tjp-menu-toggle {
+  flex: 0;
+}
 
-    .device-tree-block .btn-group button:nth-child(1) i {
-      margin-right: .5rem;
-    }
+.tjp-menu > .tjp-device-tree-block {
+  flex: 1;
+  width: 300px;
+  padding: 5px;
+  transition: all 0.2s;
 
+  /* TODO: this should pop over dashboard */
+}
 
+.tjp-menu-toggle:not(.tjp-toggled) ~ .tjp-device-tree-block {
+  width: 0px;
+  padding: 0px;
+}
+
+/* tjp-device-tree-block */
+
+.tjp-device-tree-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.tjp-device-tree-block .btn-toolbar,
+.tjp-device-tree-block .btn-group {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.tjp-device-tree-block .btn-group button {
+  flex: min-content;
+}
+
+.tjp-device-tree-block .btn-group button:nth-child(1) {
+  flex: 1;
+}
+
+.tjp-device-tree-block .btn-group button i {
+  vertical-align: middle;
+}
+
+.tjp-device-tree-block .btn-group button:nth-child(1) i {
+  margin-right: .5rem;
+}

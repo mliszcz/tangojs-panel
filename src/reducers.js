@@ -60,3 +60,15 @@ export function layouts(layouts = INITIAL_LAYOUTS, action) {
 
   return layouts
 }
+
+export function menu(menu = { isToggled: false }, action) {
+
+  switch (action.type) {
+
+    case ACTION_TYPE.UI_TOGGLE_MENU:
+      return Object.assign({}, menu, { isToggled: action.isToggled })
+
+  }
+
+  return menu
+}

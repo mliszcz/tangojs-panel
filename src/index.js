@@ -5,7 +5,7 @@ import { Provider } from 'preact-redux'
 import * as actions from './actions'
 import * as reducers from './reducers'
 
-import Application from './components/Application'
+import Application from './containers/Application'
 
 const store = createStore(combineReducers(reducers))
 

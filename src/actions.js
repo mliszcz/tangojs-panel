@@ -7,7 +7,9 @@ export const ACTION_TYPE = Enum(
   'WIDGET_ADD',
   'WIDGET_REMOVE',
   'LAYOUT_UPDATE',
-  'LAYOUT_BREAKPOINT_UPDATE')
+  'LAYOUT_BREAKPOINT_UPDATE',
+  'UI_TOGGLE_MENU'
+)
 
 export function addWidget(tag, attributes, position) {
   return {
@@ -36,5 +38,12 @@ export function updateLayoutBreakpoint(breakpoint) {
   return {
     type: ACTION_TYPE.LAYOUT_BREAKPOINT_UPDATE,
     breakpoint
+  }
+}
+
+export function toggleMenu(isToggled) {
+  return {
+    type: ACTION_TYPE.UI_TOGGLE_MENU,
+    isToggled
   }
 }
