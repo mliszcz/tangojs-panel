@@ -72,3 +72,30 @@ export function menu(menu = { isToggled: false }, action) {
 
   return menu
 }
+
+const WIDGET_SELECTOR_STATE = {
+  isOpen: false,
+  models: []
+}
+
+export function widgetSelector(widgetSelector = WIDGET_SELECTOR_STATE, action) {
+
+  switch (action.type) {
+
+    case ACTION_TYPE.UI_OPEN_WIDGET_SELECTOR:
+      console.log('open widget selector delivered')
+      return {
+        isOpen: true,
+        models: action.models
+      }
+
+    case ACTION_TYPE.UI_CLOSE_WIDGET_SELECTOR:
+      return {
+        isOpen: false,
+        models: []
+      }
+
+  }
+
+  return widgetSelector
+}

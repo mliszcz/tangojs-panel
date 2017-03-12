@@ -1,11 +1,13 @@
 
 import { h, Component } from 'preact'
-import ConnectedMenu from './ConnectedMenu'
-import ConnectedDashboard from './ConnectedDashboard'
+import { default as Menu } from './ConnectedMenu'
+import { default as Dashboard } from './ConnectedDashboard'
+import { default as WidgetSelector } from './ConnectedWidgetSelector'
 
 export default function Application() {
   return h('div', { class: 'tjp-application' },
-    h(ConnectedMenu, {}),
-    h(ConnectedDashboard, {})
+    h(Menu, {}),
+    h(Dashboard, {}),
+    h(WidgetSelector, {})
   )
 }

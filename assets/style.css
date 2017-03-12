@@ -182,3 +182,10 @@ li b {
 .tjp-device-tree-block .btn-group button:nth-child(1) i {
   margin-right: .5rem;
 }
+
+
+
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}

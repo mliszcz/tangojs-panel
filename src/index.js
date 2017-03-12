@@ -5,6 +5,8 @@ import { Provider } from 'preact-redux'
 import * as actions from './actions'
 import * as reducers from './reducers'
 
+import Modal from 'react-modal'
+
 import Application from './containers/Application'
 
 const store = createStore(combineReducers(reducers))
@@ -41,5 +43,6 @@ generateWidgets().map(w => {
 })
 
 export function bootstrap(rootElement) {
+  Modal.setAppElement(rootElement)
   render(h(Provider, { store }, h(Application, {})), rootElement)
 }

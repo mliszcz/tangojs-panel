@@ -7,31 +7,49 @@ const DEFAULT_PROPS = {
   isToggled: false
 }
 
+function button(icon, props) {
+  return h('button', props, h('i', { class: 'material-icons' }, icon))
+}
+
 export default function Menu(props = DEFAULT_PROPS) {
 
   const toggleClass = props.isToggled ? 'tjp-toggled' : ''
 
   const onToggleClick = () => props.onToggleClick(!props.isToggled)
 
+  const btnToggleProps = {
+    type: 'button',
+    class: `btn btn-secondary tjp-menu-toggle ${toggleClass}`,
+    onClick: () => props.onToggleClick(!props.isToggled)
+  }
+
+  const btnAddWidgetProps = {
+    type: 'button',
+    class: 'btn btn-primary',
+    onClick: () => props.onAddWidget(['model1', 'model2'])
+  }
+
+  const btnClearTreeProps = {
+    type: 'button',
+    class: 'btn btn-secondary',
+    onClick: () => 0
+  }
+
+  const btnReloadTreeProps = {
+    type: 'button',
+    class: 'btn btn-secondary',
+    onClick: () => 0
+  }
+
   return h('div', { class: 'tjp-menu' },
-    h('button',
-      {
-        type: 'button',
-        class: `btn btn-secondary tjp-menu-toggle ${toggleClass}`,
-        onClick: onToggleClick
-      },
-      h('i', { class: 'material-icons' }, 'menu')
-    ),
+    button('menu', btnToggleProps),
     h('div', { class: 'tjp-device-tree-block' },
       h('h2', {}, 'TangoJS Panel'),
       h('div', { class: 'btn-toolbar', role: 'toolbar' },
         h('div', { class: 'btn-group', role: 'group' },
-          h('button', { type: 'button', class: 'btn btn-primary' },
-            h('i', { class: 'material-icons' }, 'library_add')),
-          h('button', { type: 'button', class: 'btn btn-secondary' },
-            h('i', { class: 'material-icons' }, 'check_box_outline_blank')),
-          h('button', { type: 'button', class: 'btn btn-secondary' },
-            h('i', { class: 'material-icons' }, 'autorenew'))
+          button('library_add', btnAddWidgetProps),
+          button('check_box_outline_blank', btnClearTreeProps),
+          button('autorenew', btnReloadTreeProps)
         )
       ),
       h('tangojs-device-tree', {})
