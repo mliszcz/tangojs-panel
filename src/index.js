@@ -39,7 +39,7 @@ function generateWidgets() {
 }
 
 generateWidgets().map(w => {
-  store.dispatch(actions.addWidget(w.tag, w.attributes, w.position))
+  store.dispatch(actions.widgetAdd(w.tag, w.attributes, w.position))
 })
 
 export function bootstrap(rootElement) {

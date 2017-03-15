@@ -4,14 +4,12 @@ import Modal from 'react-modal'
 
 const DEFAULT_PROPS = {
   onAddWidget: function () {},
-  onModalClose: function() {},
+  onClose: function() {},
   isOpen: false,
   models: []
 }
 
 export default function WidgetSelector(props = DEFAULT_PROPS) {
-
-  console.log('widget selectorr with props', props)
 
   const modalProps = {
     isOpen: props.isOpen,
@@ -27,7 +25,7 @@ export default function WidgetSelector(props = DEFAULT_PROPS) {
   const btnDismissProps = {
     type: 'button',
     class: 'btn btn-secondary',
-    onClick: props.onModalClose
+    onClick: props.onClose
   }
 
   return h(Modal, modalProps,

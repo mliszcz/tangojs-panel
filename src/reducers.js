@@ -1,38 +1,33 @@
 
-import { ACTION_TYPE } from './actions'
+import { ActionType as A } from './actions'
 import R from 'ramda'
 
 export function widgets(widgets = [], action) {
 
   switch (action.type) {
 
-    case ACTION_TYPE.WIDGET_ADD:
+    case A.WIDGETS_ADD:
       return [...widgets, {
         tag: action.tag,
         attributes: action.attributes
       }]
 
-    case ACTION_TYPE.WIDGET_REMOVE:
+    case A.WIDGETS_REMOVE:
       return R.remove(action.index, 1, widgets)
-
-    case ACTION_TYPE.WIDGET_LOAD:
-      return action.widgets
-
   }
 
   return widgets
 }
 
-export function currentBreakpoint(currentBreakpoint = 'lg', action) {
+export function breakpoint(breakpoint = 'lg', action) {
 
   switch (action.type) {
 
-    case ACTION_TYPE.LAYOUT_BREAKPOINT_UPDATE:
+    case A.BREAKPOINT_UPDATE:
       return action.breakpoint
-
   }
 
-  return currentBreakpoint
+  return breakpoint
 }
 
 const INITIAL_LAYOUTS = { lg: [], md: [], sm: [], xs: [], xxs: [] }
@@ -41,7 +36,7 @@ export function layouts(layouts = INITIAL_LAYOUTS, action) {
 
   switch (action.type) {
 
-    case ACTION_TYPE.WIDGET_ADD:
+    case A.WIDGETS_ADD:
       const layoutEntry = layout => Object.assign({}, action.position, {
         x: 0,
         y: 0,
@@ -50,12 +45,11 @@ export function layouts(layouts = INITIAL_LAYOUTS, action) {
       })
       return R.map(v => [...v, layoutEntry(v)], layouts)
 
-    case ACTION_TYPE.WIDGET_REMOVE:
+    case A.WIDGETS_REMOVE:
       return R.map(v => R.remove(action.index, 1, v))
 
-    case ACTION_TYPE.LAYOUT_UPDATE:
+    case A.LAYOUTS_UPDATE:
       return action.layouts
-
   }
 
   return layouts
@@ -65,36 +59,33 @@ export function menu(menu = { isToggled: false }, action) {
 
   switch (action.type) {
 
-    case ACTION_TYPE.UI_TOGGLE_MENU:
+    case A.MENU_TOGGLE:
       return Object.assign({}, menu, { isToggled: action.isToggled })
-
   }
 
   return menu
 }
 
-const WIDGET_SELECTOR_STATE = {
+const INITIAL_WIDGET_SELECTOR = {
   isOpen: false,
   models: []
 }
 
-export function widgetSelector(widgetSelector = WIDGET_SELECTOR_STATE, action) {
+export function widgetSelector(widgetSelector = INITIAL_WIDGET_SELECTOR, action) {
 
   switch (action.type) {
 
-    case ACTION_TYPE.UI_OPEN_WIDGET_SELECTOR:
-      console.log('open widget selector delivered')
+    case A.WIDGET_SELECTOR_OPEN:
       return {
         isOpen: true,
         models: action.models
       }
 
-    case ACTION_TYPE.UI_CLOSE_WIDGET_SELECTOR:
+    case A.WIDGET_SELECTOR_CLOSE:
       return {
         isOpen: false,
         models: []
       }
-
   }
 
   return widgetSelector

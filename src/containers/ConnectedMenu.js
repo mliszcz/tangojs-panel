@@ -12,10 +12,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onToggleClick: (isToggled) => {
-      dispatch(actions.toggleMenu(isToggled))
+      dispatch(actions.menuToggle(isToggled))
     },
     onAddWidget: (models) => {
-      dispatch(actions.openWidgetSelector(models))
+      dispatch(actions.widgetSelectorOpen(models))
     }
   }
 }

@@ -17,6 +17,8 @@ export default function Menu(props = DEFAULT_PROPS) {
 
   const onToggleClick = () => props.onToggleClick(!props.isToggled)
 
+  let tangojsDeviceTree = null
+
   const btnToggleProps = {
     type: 'button',
     class: `btn btn-secondary tjp-menu-toggle ${toggleClass}`,
@@ -26,7 +28,10 @@ export default function Menu(props = DEFAULT_PROPS) {
   const btnAddWidgetProps = {
     type: 'button',
     class: 'btn btn-primary',
-    onClick: () => props.onAddWidget(['model1', 'model2'])
+    onClick: () => {
+      const models = tangojsDeviceTree.getSelections().map(e => e.value)
+      props.onAddWidget(models)
+    }
   }
 
   const btnClearTreeProps = {
@@ -52,7 +57,7 @@ export default function Menu(props = DEFAULT_PROPS) {
           button('autorenew', btnReloadTreeProps)
         )
       ),
-      h('tangojs-device-tree', {})
+      h('tangojs-device-tree', { ref: e => tangojsDeviceTree = e })
     )
   )
 }

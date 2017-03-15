@@ -13,10 +13,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onLayoutChange: (layout, layouts) => {
-      dispatch(actions.updateLayouts(layouts))
+      dispatch(actions.layoutsUpdate(layouts))
     },
     onBreakpointChange: (breakpoint) => {
-      dispatch(actions.updateLayoutBreakpoint(breakpoint))
+      dispatch(actions.breakpointUpdate(breakpoint))
     }
   }
 }

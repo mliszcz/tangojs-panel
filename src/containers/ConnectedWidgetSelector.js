@@ -13,10 +13,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onAddWidget: () => {
-      dispatch(actions.closeWidgetSelector())
+      dispatch(actions.widgetSelectorClose())
     },
-    onDismissModal: () => {
-      dispatch(actions.closeWidgetSelector())
+    onClose: () => {
+      dispatch(actions.widgetSelectorClose())
     }
   }
 }

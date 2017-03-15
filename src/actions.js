@@ -3,62 +3,62 @@ function Enum(...literals) {
   return Object.freeze([...literals].reduce((acc, e) => (acc[e] = e, acc), {}))
 }
 
-export const ACTION_TYPE = Enum(
-  'WIDGET_ADD',
-  'WIDGET_REMOVE',
-  'LAYOUT_UPDATE',
-  'LAYOUT_BREAKPOINT_UPDATE',
-  'UI_TOGGLE_MENU',
-  'UI_OPEN_WIDGET_SELECTOR',
-  'UI_CLOSE_WIDGET_SELECTOR'
+export const ActionType = Enum(
+  'WIDGETS_ADD',
+  'WIDGETS_REMOVE',
+  'LAYOUTS_UPDATE',
+  'BREAKPOINT_UPDATE',
+  'MENU_TOGGLE',
+  'WIDGET_SELECTOR_OPEN',
+  'WIDGET_SELECTOR_CLOSE'
 )
 
-export function addWidget(tag, attributes, position) {
+export function widgetAdd(tag, attributes, position) {
   return {
-    type: ACTION_TYPE.WIDGET_ADD,
+    type: ActionType.WIDGETS_ADD,
     tag,
     attributes,
     position
   }
 }
 
-export function removeWidget(index) {
+export function widgetRemove(index) {
   return {
-    type: ACTION_TYPE.WIDGET_REMOVE,
+    type: ActionType.WIDGETS_REMOVE,
     index
   }
 }
 
-export function updateLayouts(layouts) {
+export function layoutsUpdate(layouts) {
   return {
-    type: ACTION_TYPE.LAYOUT_UPDATE,
+    type: ActionType.LAYOUTS_UPDATE,
     layouts
   }
 }
 
-export function updateLayoutBreakpoint(breakpoint) {
+export function breakpointUpdate(breakpoint) {
   return {
-    type: ACTION_TYPE.LAYOUT_BREAKPOINT_UPDATE,
+    type: ActionType.BREAKPOINT_UPDATE,
     breakpoint
   }
 }
 
-export function toggleMenu(isToggled) {
+export function menuToggle(isToggled) {
   return {
-    type: ACTION_TYPE.UI_TOGGLE_MENU,
+    type: ActionType.MENU_TOGGLE,
     isToggled
   }
 }
 
-export function openWidgetSelector(models) {
+export function widgetSelectorOpen(models) {
   return {
-    type: ACTION_TYPE.UI_OPEN_WIDGET_SELECTOR,
+    type: ActionType.WIDGET_SELECTOR_OPEN,
     models
   }
 }
 
-export function closeWidgetSelector() {
+export function widgetSelectorClose() {
   return {
-    type: ACTION_TYPE.UI_CLOSE_WIDGET_SELECTOR
+    type: ActionType.WIDGET_SELECTOR_CLOSE
   }
 }
