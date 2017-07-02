@@ -10,7 +10,8 @@ export const ActionType = Enum(
   'BREAKPOINT_UPDATE',
   'MENU_TOGGLE',
   'WIDGET_SELECTOR_OPEN',
-  'WIDGET_SELECTOR_CLOSE'
+  'WIDGET_SELECTOR_CLOSE',
+  'WIDGET_SELECTOR_SELECT'
 )
 
 export function widgetAdd(tag, attributes, position) {
@@ -60,5 +61,12 @@ export function widgetSelectorOpen(models) {
 export function widgetSelectorClose() {
   return {
     type: ActionType.WIDGET_SELECTOR_CLOSE
+  }
+}
+
+export function widgetSelectorSelect(tag) {
+  return {
+    type: ActionType.WIDGET_SELECTOR_SELECT,
+    tag
   }
 }

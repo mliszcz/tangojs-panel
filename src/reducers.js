@@ -68,6 +68,7 @@ export function menu(menu = { isToggled: false }, action) {
 
 const INITIAL_WIDGET_SELECTOR = {
   isOpen: false,
+  tag: undefined,
   models: []
 }
 
@@ -78,13 +79,22 @@ export function widgetSelector(widgetSelector = INITIAL_WIDGET_SELECTOR, action)
     case A.WIDGET_SELECTOR_OPEN:
       return {
         isOpen: true,
+        tag: undefined,
         models: action.models
       }
 
     case A.WIDGET_SELECTOR_CLOSE:
       return {
         isOpen: false,
+        tag: undefined,
         models: []
+      }
+
+    case A.WIDGET_SELECTOR_SELECT:
+      return {
+        isOpen: true,
+        tag: action.tag,
+        models: widgetSelector.models
       }
   }
 
